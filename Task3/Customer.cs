@@ -5,14 +5,14 @@ namespace Day4_HW.Task3
 {
     public class Customer
     {
-        public string customerName { get; private set; }
-        public string customerAddress { get; private set; }
-        public string customerEmail { get; private set; }
+        public string CustomerName { get; private set; }
+        public string CustomerAddress { get; private set; }
+        public string CustomerEmail { get; private set; }
 
         public Customer(string name, string address, string email)
         {
-            customerName = name;
-            customerAddress = address;
+            CustomerName = name;
+            CustomerAddress = address;
             UpdateEmail(email);
         }
 
@@ -20,7 +20,7 @@ namespace Day4_HW.Task3
         {
             if (CheckEmail(email))
             {
-                customerEmail = email;
+                CustomerEmail = email;
             }
             else
             {

@@ -17,7 +17,7 @@ namespace Day4_HW.Task3
         public void GetOrderInformation()
         {
             Console.WriteLine("Order number\t{0}\nCustomer Name\t{1}\nCustomer Address\t{2}\nCustomer Email\t{3}\n",
-                OrderNumber, customerName, customerAddress, customerEmail);
+                OrderNumber, CustomerName, CustomerAddress, CustomerEmail);
         }
     }
 }
