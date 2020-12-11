@@ -15,8 +15,8 @@ namespace Day4_HW.Task2
             { 
                 set
                 {
-                    var md5 = new MD5CryptoServiceProvider();
-                    _Password = md5.ComputeHash(Encoding.UTF8.GetBytes(value)); //infSec
+
+                    _Password = ComputeMD5(value);//infSec
                 }
                 get
                 {
@@ -32,11 +32,16 @@ namespace Day4_HW.Task2
             }
         }
 
+        private static byte[] ComputeMD5(string sequence)
+        {
+            var md5 = new MD5CryptoServiceProvider();
+            return md5.ComputeHash(Encoding.UTF8.GetBytes(sequence));
+        }
+
         public static void CheckAuth(User[] dataBase, string login, string password)
         {
             var exist = false;
-            var md5 = new MD5CryptoServiceProvider();
-            password = BitConverter.ToString(md5.ComputeHash(Encoding.UTF8.GetBytes(password)));
+            password = BitConverter.ToString(ComputeMD5(password));
             foreach (var user in dataBase)
             {
                 if (user.Login == login)
